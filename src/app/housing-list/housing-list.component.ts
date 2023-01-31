@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {HousingLocation} from "../housing-location";
 
 @Component({
@@ -6,18 +6,12 @@ import {HousingLocation} from "../housing-location";
   templateUrl: './housing-list.component.html',
   styleUrls: ['./housing-list.component.css']
 })
-export class HousingListComponent implements OnInit {
+export class HousingListComponent {
 
   @Input() locationList: HousingLocation[] = [];
   results: HousingLocation[] = [];
 
   @Output() locationSelectedEvent = new EventEmitter<HousingLocation>();
-
-  constructor() {
-  }
-
-  ngOnInit(): void {
-  }
 
   searchHousingLocations(searchText: string) {
     if (!searchText) return;
